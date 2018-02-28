@@ -42,7 +42,7 @@ export default class DateControl extends React.Component {
 
   render() {
     const { includeTime, value, classNameWrapper, setActiveStyle, setInactiveStyle } = this.props;
-    const format = this.format || moment.defaultFormat;
+    const format = this.format || moment[includeTime ? 'defaultFormat' : 'HTML5_FMT.DATE'];
     return (
       <DateTime
         timeFormat={!!includeTime}
